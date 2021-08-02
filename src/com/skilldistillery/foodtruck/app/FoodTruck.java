@@ -4,13 +4,13 @@ public class FoodTruck {
 	private int id;
 	private String name;
 	private String foodType;
-	private double rating;
+	private int rating;
 	private static int countFoodTrucks = 0;
 	
 	public FoodTruck() {
 	}
 	
-	public FoodTruck(String pname, String pfoodType, double rating) {
+	public FoodTruck(String pname, String pfoodType, int rating) {
 		name = pname;
 		foodType = pfoodType;
 		rating = this.rating;
@@ -46,7 +46,7 @@ public class FoodTruck {
 		return rating;
 	}
 
-	public void setRating(double rating) {
+	public void setRating(int rating) {
 		this.rating = rating;
 	}
 
