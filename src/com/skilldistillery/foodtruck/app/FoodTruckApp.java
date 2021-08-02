@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class FoodTruckApp {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// TODO Constructors and Welcome Menu
 		Scanner input = new Scanner(System.in);
 		FoodTruckApp tApp = new FoodTruckApp();
 		System.out.println("*********************Welcome to the Food Truck App.*************************");
@@ -13,6 +13,7 @@ public class FoodTruckApp {
 		System.out.println("*****************************Lets begin!************************************");
 		System.out.println("****************************************************************************");
 		
+		// Build FoodTrucks and store in array of food trucks
 		FoodTruck[] trucks = new FoodTruck[5];
 		FoodTruck truck;
 		String foodTruckName;
@@ -32,14 +33,15 @@ public class FoodTruckApp {
 				break;
 			}
 		}
+		// Evaluate user selections and envoke the appropriate method or exit the program.
 	String selection = "continue";
 		while(!selection.equalsIgnoreCase("quit")) {
 			System.out.println("*********************Selection Menu*************************");
-			System.out.println("*** 1. List all of my Food Trucks				************");
-			System.out.println("*** 2. See the average rating of my food trucks	************");
-			System.out.println("*** 3. Display my hightest-rated food truck		************");
-			System.out.println("*** 4. Quit the program							************");
-			System.out.println("*********************Selection Menu*************************");
+			System.out.println("*** 1. List all of my Food Trucks***************************");
+			System.out.println("*** 2. See the average rating of my food trucks*************");
+			System.out.println("*** 3. Display my hightest-rated food truck*****************");
+			System.out.println("*** 4. Quit the program*************************************");
+			System.out.println("************************************************************");
 			System.out.println("Please enter the number of the desired selection from the menu above");
 			selection = input.nextLine();
 			if(selection.equalsIgnoreCase("1")) {
@@ -60,7 +62,7 @@ public class FoodTruckApp {
 		}
 		input.close();
 	}
-	
+//		Methods to aggregate and present information about the food trucks and facilitate the selection menu
 	public void printFoodTrucks(FoodTruck trucks[]) {
 		for(int i = 0;i<trucks.length;i++) {
 			if(trucks[i] != null) {

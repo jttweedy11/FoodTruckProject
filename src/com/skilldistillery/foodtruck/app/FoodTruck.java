@@ -17,7 +17,7 @@ public class FoodTruck {
 		countFoodTrucks++;
 		id = countFoodTrucks;
 	}
-
+// 		Getters and Setters Auto-Generate
 	public int getId() {
 		return id;
 	}
