@@ -7,13 +7,13 @@ public class FoodTruck {
 	private int rating;
 	private static int countFoodTrucks = 0;
 	
-	public FoodTruck() {
-	}
+//	public FoodTruck() {
+//	}
 	
 	public FoodTruck(String pname, String pfoodType, int rating) {
 		name = pname;
 		foodType = pfoodType;
-		rating = this.rating;
+		this.rating = rating;
 		countFoodTrucks++;
 		id = countFoodTrucks;
 	}

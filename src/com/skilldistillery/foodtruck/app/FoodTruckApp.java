@@ -22,14 +22,15 @@ public class FoodTruckApp {
 			if(!foodTruckName.equalsIgnoreCase("exit")) {
 				System.out.println("Please enter the type of food offered by this truck. Examples being American, Mexican, Chinese etc..");
 				String foodType = input.nextLine();
+//				input.nextLine();
 				System.out.println("Please enter your rating for this Food Truck with a 1 being your favorite, and a 5 being your least favorite.");
 				int rating = input.nextInt();
-				System.out.println(foodTruckName);
-				System.out.println(foodType);
-				System.out.println(rating);
+//				System.out.println(foodTruckName);
+//				System.out.println(foodType);
+//				System.out.println(rating);
 				input.nextLine();
-				FoodTruck thisTruck = new FoodTruck(foodTruckName, foodType, rating);
-				trucks[i] = thisTruck;
+				truck = new FoodTruck(foodTruckName, foodType, rating);
+				trucks[i] = truck;
 			}
 			else if(foodTruckName.equalsIgnoreCase("exit")) {
 				break;
@@ -49,10 +50,11 @@ public class FoodTruckApp {
 				tApp.printFoodTrucks(trucks);
 			}
 			else if(selection.equalsIgnoreCase("2")) {
-				tApp.getAverageRate(trucks);
+				System.out.println("The average rating of your food trucks is " + tApp.getAverageRate(trucks));
 			}
 			else if(selection.equalsIgnoreCase("3")) {
-				tApp.getHighestRated(trucks);
+				FoodTruck highest = tApp.getHighestRated(trucks);
+				System.out.println("The highest rated Food Truck is " + highest);
 			}
 			else if(selection.equalsIgnoreCase("4")) {
 				selection = "quit";
@@ -60,6 +62,7 @@ public class FoodTruckApp {
 				break;
 			}
 		}
+		input.close();
 	}
 	
 	public void printFoodTrucks(FoodTruck trucks[]) {
@@ -70,27 +73,27 @@ public class FoodTruckApp {
 		}
 	}
 	public double getAverageRate(FoodTruck trucks[]) {
-		double runTot = 0.0;
+		int runTot = 0;
 		int numOfTrucks = 0;
 		int i = 0;
-		if(trucks[i]!= null) {
-			for(int t = 0; t< trucks.length;t++) {
-				numOfTrucks++;
-				runTot += trucks[t].getRating();
+		while(i<5 && trucks[i] !=null) {
+			numOfTrucks++;
+			runTot += trucks[i].getRating();
+			i++;
 			}
-		}
-		double average = (runTot/numOfTrucks);
+		double average = (double)(runTot/numOfTrucks);
 		return average;
-	}
+		}
 	public FoodTruck getHighestRated(FoodTruck trucks[]) {
 		FoodTruck highest = trucks[0];
 		int i = 0;
-		if(trucks[i]!=null) {
-			for(int t = 0; t<trucks.length;t++) {
-				if(trucks[t].getRating()>highest.getRating()) {
-					highest = trucks[t];
+		while(i<5) {
+			if(trucks[i] !=null) {
+				if(trucks[i].getRating() < highest.getRating()) {
+					highest = trucks[i];
 				}
 			}
+			i++;
 		}
 		return highest;
 	}
