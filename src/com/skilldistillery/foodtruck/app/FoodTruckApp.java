@@ -22,12 +22,8 @@ public class FoodTruckApp {
 			if(!foodTruckName.equalsIgnoreCase("exit")) {
 				System.out.println("Please enter the type of food offered by this truck. Examples being American, Mexican, Chinese etc..");
 				String foodType = input.nextLine();
-//				input.nextLine();
 				System.out.println("Please enter your rating for this Food Truck with a 1 being your favorite, and a 5 being your least favorite.");
 				int rating = input.nextInt();
-//				System.out.println(foodTruckName);
-//				System.out.println(foodType);
-//				System.out.println(rating);
 				input.nextLine();
 				truck = new FoodTruck(foodTruckName, foodType, rating);
 				trucks[i] = truck;
