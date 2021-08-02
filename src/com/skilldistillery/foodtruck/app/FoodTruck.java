@@ -42,7 +42,7 @@ public class FoodTruck {
 		this.foodType = foodType;
 	}
 
-	public double getRating() {
+	public int getRating() {
 		return rating;
 	}
 
